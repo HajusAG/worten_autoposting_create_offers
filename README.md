@@ -6,7 +6,7 @@ Owner: Vitaliy Dyedukh.
 
 ## What it does
 
-Each day at 06:15 Europe/Kiev:
+Each day at 06:30 Europe/Kiev:
 
 1. Reads `x_auto_posting` tasks in `STAGE_PENDING` (6) on Worten website `117`
    (Worten PT | HAJUS) from Odoo prod, then groups them by `x_studio_product`
@@ -46,7 +46,7 @@ The schedule is configured in **Coolify -> Application -> Scheduled Tasks**:
 | --- | --- |
 | Name | `worten-autoposting-daily` |
 | Command | `python /app/script.py` |
-| Frequency | `15 6 * * *` |
+| Frequency | `30 6 * * *` |
 | Timezone | `Europe/Kiev` |
 
 Coolify runs the command via `docker exec` inside the running container. Logs go to the

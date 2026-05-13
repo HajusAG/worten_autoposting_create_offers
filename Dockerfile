@@ -18,5 +18,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY script.py ./
 
 # Container stays alive; cron schedule is configured in Coolify Scheduled Tasks
-# (command: python /app/script.py, frequency: 15 6 * * *, TZ: Europe/Kiev).
+# (command: python /app/script.py, frequency: 30 6 * * *, TZ: Europe/Kiev).
 CMD ["tail", "-f", "/dev/null"]
