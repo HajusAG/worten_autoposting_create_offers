@@ -37,6 +37,16 @@ The V3 strategy uses **one MCM dump instead of N per-product checks**, **blind
 import instead of per-product create**, and **local classification + batched
 Odoo reads**.
 
+### Benchmarks on the same Pending pool (Worten, 2026-05-13)
+
+| Metric | n8n (per-product) | V3 (MCM-dump) | Improvement |
+| --- | --- | --- | --- |
+| Wall time | ~2h 16m | **~5 min** | **~27x** |
+| Mirakl API requests | ~1274-1911 | **1** (MCM dump only) | **~1274-1911x** |
+| 429 rate-limit retries | several per run | 0 | -- |
+| Pending tasks processed | 637 | 637 | same coverage |
+| Unique products classified | 564 | 564 | same coverage |
+
 ## Schedule
 
 The container itself just stays alive (`tail -f /dev/null`).
